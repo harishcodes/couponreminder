@@ -1,27 +1,33 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchFuelDetails} from '../actions.js'
-import {handleMarkerClick} from '../actions.js'
+import {openRegisterFunction} from '../actions.js'
+import {openLoginFunction} from '../actions.js'
+import {openHomeScreen} from '../actions.js'
 import {fetchFuelDetailsWithLatLng} from '../actions.js'
 import homepage from './homepage.js'
 
 const mapStateToProps = (state) => {
     return ({
-        firstLoad:state.Fuelreducer.firstLoad,
-        error:state.Fuelreducer.error,
-        currentLocError:state.Fuelreducer.currentLocError
+        newRegOrLogin:state.Couponreducer.newRegOrLogin
     })
 }
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchFuelDetails: (zipCode) => {
+        openRegisterFunction: () => {
             console.log("gg")
-            dispatch(fetchFuelDetails(zipCode))
-        }        
+            dispatch(openRegisterFunction())
+        },
+        openLoginFunction: ()=> {
+            dispatch(openLoginFunction())
+        },
+        openHomeScreen: ()=> {
+            dispatch(openHomeScreen())
+        }
+
     }
 }
 
-const homepageaction = connect(mapStateToProps,mapDispatchToProps)(homepage)
-export default homepageaction
+const HomePageAction = connect(mapStateToProps,mapDispatchToProps)(homepage)
+export default HomePageAction

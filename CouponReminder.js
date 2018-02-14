@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import homepageaction from './Home-Page/components/homepageaction.js'
+import HomePageAction from './Home-Page/components/HomePageAction.js'
 import Menu from './Menu.js';
 export default class CouponReminder extends React.Component {
     
@@ -15,9 +15,8 @@ export default class CouponReminder extends React.Component {
               
         return (
             <div>
-                <Menu/>       
-                <h1>dddddd</h1>
-                <homepageaction/>     
+                <Menu/>                     
+                <HomePageAction/>     
             </div>
             )
     }

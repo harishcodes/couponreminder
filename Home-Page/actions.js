@@ -56,9 +56,25 @@ export const fetchFuelDetailsWithLatLng = (lat,lng) => {
 }
 
 }
-export function handleMarkerClick(){
+
+
+export function openRegisterFunction(){
     return (dispatch) => {
-        dispatch({type:"MARKER_CLICKED",payload:''})
+        dispatch({type:"NEW_REGISTRATION",payload:''})
+    }
+}
+
+export function openHomeScreen(){
+    return (dispatch) => {
+        dispatch({type:"HOME",payload:''})
+    }
+
+}
+
+
+export function openLoginFunction(){
+    return (dispatch) => {
+        dispatch({type:"LOGIN",payload:''})
     }
 }
 

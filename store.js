@@ -1,4 +1,4 @@
-import {applyMiddleware, createStore} from 'redux'
+import {applyMiddleware, createStore,compose} from 'redux'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import reducer from './masterreducer.js'
@@ -8,7 +8,10 @@ export default function storefn(){
     const middleware =applyMiddleware(thunk)
     //console.log('sdsd')
     //return createStore(reducer, middleware)
-    let store=createStore(reducer, middleware)
+    let store=createStore(reducer, 
+                          compose(middleware,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+                          )
+                          
     
     return store
     //return createStore(reducer)
